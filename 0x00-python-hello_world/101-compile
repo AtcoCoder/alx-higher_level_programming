@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -m py_compile $PYFILE && mv __pycache__/main.cpython-38.pyc $PYFILEc
+python3 -c "from py_compile import compile; compile($PYFILE, '$PYFILE' + 'c')"
