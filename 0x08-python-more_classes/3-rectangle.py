@@ -13,6 +13,7 @@ class Rectangle:
         self.__height = height
 
     def __str__(self):
+        """Returns: printed rectangle using '#'"""
         row = "#" * self.__width + "\n"
         rectangle = row * (self.__height - 1) + (self.__width * "#")
         return rectangle
