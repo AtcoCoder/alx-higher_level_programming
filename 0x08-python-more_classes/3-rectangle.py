@@ -14,6 +14,8 @@ class Rectangle:
 
     def __str__(self):
         """Returns: printed rectangle using '#'"""
+        if self.__width == 0 or self.__height == 0:
+            return ""
         row = "#" * self.__width + "\n"
         rectangle = row * (self.__height - 1) + (self.__width * "#")
         return rectangle
