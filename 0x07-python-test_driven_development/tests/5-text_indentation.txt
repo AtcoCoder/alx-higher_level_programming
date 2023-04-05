@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+>>> text_indentation("Hello. World World: My People? People?")
+Hello.
+<BLANKLINE>
+World World:
+<BLANKLINE>
+My People?
+<BLANKLINE>
+People?
+<BLANKLINE>
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
