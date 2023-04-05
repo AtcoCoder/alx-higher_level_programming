@@ -6,4 +6,6 @@ is called first_name."""
 
 
 class LockedClass:
+    """Locked class that allow no dynamically creation of instances
+    attributes except named first_name"""
     __slots__ = ['first_name']
