@@ -14,16 +14,11 @@ class Rectangle:
         self.__width = width
         self.__height = height
         type(self).number_of_instances += 1
-        self.print_symbol = type(self).print_symbol
-        self.symbol_tracker = type(self).print_symbol
 
     def __str__(self):
         """Returns: printed rectangle using '#'"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        if type(self).print_symbol != self.symbol_tracker:
-            self.print_symbol = type(self).print_symbol
-            self.symbol_tracker = self.print_symbol
         symbol = str(self.print_symbol)
         row = symbol * self.__width + "\n"
         rectangle = row * (self.__height - 1) + (self.__width * symbol)
