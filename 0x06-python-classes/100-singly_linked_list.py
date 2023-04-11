@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Contains Class Node"""
 
+
 class Node:
     """Class Node defines a node of a singly
     linked list"""
@@ -17,7 +18,7 @@ class Node:
     @data.setter
     def data(self, value):
         """Set the value of instance pri attr data"""
-        if not isinstance(value , int):
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
@@ -39,9 +40,11 @@ class SinglyLinkedList:
     """Class SinglyLinkedList defines a singly
     linked list"""
     def __init__(self):
+        """Initializes the instances attributes"""
         self.linked_list = []
 
     def __str__(self):
+        """String representation of the object"""
         return self.print_list()
 
     def sorted_insert(self, value):
@@ -68,6 +71,7 @@ class SinglyLinkedList:
             lt += '\n'
         lt += str(self.linked_list[-1].data)
         return lt
+
 
 if __name__ == "__main__":
     s1 = SinglyLinkedList()
