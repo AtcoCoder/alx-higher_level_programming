@@ -10,6 +10,8 @@ def pascal_triangle(n):
          the Pascal's triangle
     """
     i = 0
+    if n <= 0:
+        return []
     triangle = [[1]]
     previous = []
     while i < n - 1:
