@@ -31,7 +31,7 @@ class Node:
     def next_node(self, value):
         """Set the value of instance attr next_node"""
         if not isinstance(value, Node):
-            if not isinstance(value, None):
+            if value is not None:
                 raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
@@ -41,13 +41,32 @@ class SinglyLinkedList:
     linked list"""
     def __init__(self):
         """Initializes the instances attributes"""
-        self.linked_list = []
+        self.__head = None
+        self.length = 0
 
     def __str__(self):
         """String representation of the object"""
         return self.print_list()
 
     def sorted_insert(self, value):
+        new_node = Node(value)
+        current_node = self.__head
+        previous_node = self.__head
+        if current_node == None:
+            self.__head = new_node
+            new_node.next_node = None
+            self.length += 1
+        else:
+            while current_node != None:
+                if value < current_node.data:
+                    new_node.next_node = current_node
+                    previous_node.next_node = new_node
+                    self.length += 1
+                    break
+                previous_node = current_node
+                current_node = current_node.next_node
+
+    def old_sorted_insert(self, value):
         """inserts a new Node
         into the correct sorted position
         in the list (increasing order)"""
@@ -65,11 +84,15 @@ class SinglyLinkedList:
 
     def print_list(self):
         """Prints the data at each node"""
+        current_node = self.__head
+        count = 0
         lt = ""
-        for node in self.linked_list[:-1]:
-            lt += str(node.data)
-            lt += '\n'
-        lt += str(self.linked_list[-1].data)
+        while (current_node != None):
+            lt += str(current_node.data)
+            current_node = current_node.next_node
+            count += 1
+            if self.length != count:
+                lt += '\n'
         return lt
 
 

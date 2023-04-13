@@ -101,3 +101,6 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+if __name__ == "__main__":
+    r = Rectangle(2, 2)
+    print(r.width)

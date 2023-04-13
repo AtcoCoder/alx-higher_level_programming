@@ -5,3 +5,4 @@ s = Square(13)
 
 print(s)
 print(s.area())
+s = Square("5")
