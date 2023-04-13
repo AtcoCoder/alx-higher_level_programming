@@ -9,8 +9,8 @@ class Square(Rectangle):
     """Subclass Square of parent class Rectangle"""
     def __init__(self, size):
         """Initializes the instance attributes"""
-        Rectangle.__init__(self, size, size)
         self.integer_validator("size", size)
+        Rectangle.__init__(self, size, size)
         self.__size = size
 
     def area(self):
