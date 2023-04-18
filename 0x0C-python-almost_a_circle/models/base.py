@@ -71,7 +71,7 @@ class Base:
         list_dictionaries = cls.from_json_string(string_from_file)
         list_objects = []
         for dictionary in list_dictionaries:
-            list_objects.append(cls(**dictionary))
+            list_objects.append(cls.create(dictionary))
         return list_objects
 
     @classmethod
