@@ -120,3 +120,52 @@ class Base:
         for dictionary in list_of_dict_attrs:
             list_objs.append(cls(**dictionary))
         return list_objs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draws all the Rectangles and Squares"""
+        random_colors = [
+            "red",
+            "green",
+            "pink",
+            "yellow",
+            "blue",
+            "brown",
+            "purple"]
+        for rectangle in list_rectangles:
+            print(rectangle.width, rectangle.height, rectangle.x, rectangle.y)
+            rect = Turtle()
+            rect.hideturtle()
+            rect.fillcolor(random.choice(random_colors))
+            rect.penup()
+            rect.goto(rectangle.x, rectangle.y)
+            rect.pendown()
+            rect.begin_fill()
+            rect.setheading(0)
+            rect.fd(rectangle.width)
+            rect.setheading(90)
+            rect.fd(rectangle.height)
+            rect.setheading(180)
+            rect.fd(rectangle.width)
+            rect.setheading(270)
+            rect.fd(rectangle.height)
+            rect.end_fill()
+
+        for square in list_squares:
+            sqr = Turtle()
+            sqr.fillcolor(random.choice(random_colors))
+            sqr.hideturtle()
+            sqr.penup()
+            sqr.goto(square.x, square.y)
+            sqr.pendown()
+            sqr.begin_fill()
+            sqr.setheading(0)
+            sqr.fd(square.size)
+            sqr.setheading(90)
+            sqr.fd(square.size)
+            sqr.setheading(180)
+            sqr.fd(square.size)
+            sqr.setheading(270)
+            sqr.fd(square.size)
+            sqr.end_fill()
+        Screen().exitonclick()
