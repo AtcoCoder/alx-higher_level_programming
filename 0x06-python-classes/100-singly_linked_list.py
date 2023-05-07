@@ -44,54 +44,29 @@ class SinglyLinkedList:
         self.__head = None
         self.length = 0
 
-    def __str__(self):
-        """String representation of the object"""
-        return self.print_list()
-
     def sorted_insert(self, value):
+        """Insert a new node in correct sort list (ascending order)"""
         new_node = Node(value)
         current_node = self.__head
-        previous_node = self.__head
-        if current_node == None:
+        previous_node = None
+        while current_node is not None and value > current_node.data:
+            previous_node = current_node
+            current_node = current_node.next_node
+
+        if previous_node is None:
             self.__head = new_node
-            new_node.next_node = None
-            self.length += 1
         else:
-            while current_node != None:
-                if value < current_node.data:
-                    new_node.next_node = current_node
-                    previous_node.next_node = new_node
-                    self.length += 1
-                    break
-                previous_node = current_node
-                current_node = current_node.next_node
+            previous_node.next_node = new_node
+        new_node.next_node = current_node
 
-    def old_sorted_insert(self, value):
-        """inserts a new Node
-        into the correct sorted position
-        in the list (increasing order)"""
-        new_node = Node(value)
-        if len(self.linked_list) == 0:
-            self.linked_list.append(new_node)
-        else:
-            for index, node in enumerate(self.linked_list):
-                if value < node.data:
-                    self.linked_list.insert(index, new_node)
-                    break
-                elif index == len(self.linked_list) - 1:
-                    self.linked_list.append(new_node)
-                    break
-
-    def print_list(self):
-        """Prints the data at each node"""
+    def __str__(self):
+        """String representation of the linkedList"""
         current_node = self.__head
-        count = 0
         lt = ""
-        while (current_node != None):
+        while current_node is not None:
             lt += str(current_node.data)
             current_node = current_node.next_node
-            count += 1
-            if self.length != count:
+            if current_node is not None:
                 lt += '\n'
         return lt
 
