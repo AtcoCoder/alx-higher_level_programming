@@ -72,6 +72,4 @@ class Square:
                     sq += '#'
                 if i != self.__size - 1:
                     sq += '\n'
-        else:
-            sq += '\n'
         return sq
