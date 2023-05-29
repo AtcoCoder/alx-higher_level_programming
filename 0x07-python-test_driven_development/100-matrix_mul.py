@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Functions: 
+"""Functions:
     matrix_mul
 """
 
 
 def matrix_mul(m_a, m_b):
     """Multiplies 2 matrices
-    
+
     Args:
         m_a (list): list of integers
         m_b (list): list of integers
@@ -30,8 +30,7 @@ def matrix_mul(m_a, m_b):
     for row in m_a:
         for ele in row:
             if not isinstance(ele, int) and not isinstance(ele, float):
-                raise TypeError('m_a should contain only integers or floats')            
-    
+                raise TypeError('m_a should contain only integers or floats')
     for row in m_b:
         for ele in row:
             if not isinstance(ele, int) and not isinstance(ele, float):
