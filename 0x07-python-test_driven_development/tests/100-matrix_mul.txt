@@ -100,9 +100,16 @@ Not list of lists:
 	    ...
 	ValueError: m_b can't be empty
 
+Wrong number of argements:
+	>>> print(matrix_mul())
+	Traceback (most recent call last):
+	    ...
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 
-
-
+	>>> print(matrix_mul(m_a, m_b, []))
+	Traceback (most recent call last):
+	    ...
+	TypeError: matrix_mul() takes 2 positional arguments but 3 were given
 
 Not list of lists of integers/float:
 	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
@@ -228,4 +235,3 @@ Right inputs:
 	[[0.0, 0.0], [0.0, 0.0]]
 	>>> print(matrix_mul(m_half_zero, m_b))
 	[[0, 0.0], [3, 7.4]]
-
