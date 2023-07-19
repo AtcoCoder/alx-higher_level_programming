@@ -1,5 +1,5 @@
 Wrong input type:
-	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 	>>> m_a = [[1, 2], [1, 2]]
 	>>> m_b = [[1, 1], [1, 1]]
 	>>> m_a_string = "hello"
@@ -9,38 +9,38 @@ Wrong input type:
 	>>> m_b_dict = {"name": "Omar"}
 	>>> m_b_tuple = (1, 2, 3)
 
-	>>> print(matrix_mul(m_a_string, m_b))
+	>>> print(lazy_matrix_mul(m_a_string, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a must be a list
 
-	>>> print(matrix_mul(m_a, m_b_string))
+	>>> print(lazy_matrix_mul(m_a, m_b_string))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b must be a list
 
-	>>> print(matrix_mul(m_a_dict, m_b))
+	>>> print(lazy_matrix_mul(m_a_dict, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a must be a list
 
-	>>> print(matrix_mul(m_a, m_b_dict))
+	>>> print(lazy_matrix_mul(m_a, m_b_dict))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b must be a list
 
-	>>> print(matrix_mul(m_a_tuple, m_b))
+	>>> print(lazy_matrix_mul(m_a_tuple, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a must be a list
 
-	>>> print(matrix_mul(m_a, m_b_tuple))
+	>>> print(lazy_matrix_mul(m_a, m_b_tuple))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b must be a list
 
 Not list of lists:
-	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 	>>> m_a = [[1, 2], [1, 2]]
 	>>> m_b = [[1, 1], [1, 1]]
 	>>> m_a_list = [2, 3]
@@ -50,69 +50,69 @@ Not list of lists:
 	>>> dict_list = [{'age': 30}, [4, 3]]
 	>>> tuple_list = [(2, 3), [4, 4]]
 	
-	>>> print(matrix_mul(m_a_list, m_b))
+	>>> print(lazy_matrix_mul(m_a_list, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a must be a list of lists
 
-	>>> print(matrix_mul(m_a, m_b_list))
+	>>> print(lazy_matrix_mul(m_a, m_b_list))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b must be a list of lists
 
-	>>> print(matrix_mul(str_list, m_b))
+	>>> print(lazy_matrix_mul(str_list, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a must be a list of lists
 
-	>>> print(matrix_mul(m_a, str_list))
+	>>> print(lazy_matrix_mul(m_a, str_list))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b must be a list of lists
 
-	>>> print(matrix_mul(dict_list, m_b))
+	>>> print(lazy_matrix_mul(dict_list, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a must be a list of lists
 
-	>>> print(matrix_mul(m_a, dict_list))
+	>>> print(lazy_matrix_mul(m_a, dict_list))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b must be a list of lists
 
-	>>> print(matrix_mul(tuple_list, m_b))
+	>>> print(lazy_matrix_mul(tuple_list, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a must be a list of lists
 
-	>>> print(matrix_mul(m_a, tuple_list))
+	>>> print(lazy_matrix_mul(m_a, tuple_list))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b must be a list of lists
 
-	>>> print(matrix_mul(empty_list, m_b))
+	>>> print(lazy_matrix_mul(empty_list, m_b))
 	Traceback (most recent call last):
 	    ...
 	ValueError: m_a can't be empty
 
-	>>> print(matrix_mul(m_a, empty_list))
+	>>> print(lazy_matrix_mul(m_a, empty_list))
 	Traceback (most recent call last):
 	    ...
 	ValueError: m_b can't be empty
 
 Wrong number of argements:
-	>>> print(matrix_mul())
+	>>> print(lazy_matrix_mul())
 	Traceback (most recent call last):
 	    ...
-	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 
-	>>> print(matrix_mul(m_a, m_b, []))
+	>>> print(lazy_matrix_mul(m_a, m_b, []))
 	Traceback (most recent call last):
 	    ...
-	TypeError: matrix_mul() takes 2 positional arguments but 3 were given
+	TypeError: lazy_matrix_mul() takes 2 positional arguments but 3 were given
 
 Not list of lists of integers/float:
-	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 	>>> str_ele = [["hello", 2], [1, 3]]
 	>>> dict_ele = [[{'name': 'Omar'}, 2], [4, 1]]
 	>>> tuple_ele = [[(2, 2), 1], [2, 2]]
@@ -122,76 +122,76 @@ Not list of lists of integers/float:
 	>>> m_a = [[1, 2], [1, 2]]
 	>>> m_b = [[1, 1], [1, 1]]
 
-	>>> print(matrix_mul(str_ele, m_b))
+	>>> print(lazy_matrix_mul(str_ele, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a should contain only integers or floats
 
-	>>> print(matrix_mul(m_a, str_ele))
+	>>> print(lazy_matrix_mul(m_a, str_ele))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b should contain only integers or floats
 
-	>>> print(matrix_mul(dict_ele, m_b))
+	>>> print(lazy_matrix_mul(dict_ele, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a should contain only integers or floats
 
-	>>> print(matrix_mul(m_a, dict_ele))
+	>>> print(lazy_matrix_mul(m_a, dict_ele))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b should contain only integers or floats
 
-	>>> print(matrix_mul(tuple_ele, m_b))
+	>>> print(lazy_matrix_mul(tuple_ele, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a should contain only integers or floats
 
-	>>> print(matrix_mul(m_a, tuple_ele))
+	>>> print(lazy_matrix_mul(m_a, tuple_ele))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b should contain only integers or floats
 
-	>>> print(matrix_mul(list_ele, m_b))
+	>>> print(lazy_matrix_mul(list_ele, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_a should contain only integers or floats
 
-	>>> print(matrix_mul(m_a, list_ele))
+	>>> print(lazy_matrix_mul(m_a, list_ele))
 	Traceback (most recent call last):
 	    ...
 	TypeError: m_b should contain only integers or floats
 
 Wrong matrix:
-	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 	>>> three_d = [[2, 2, 2], [2, 3, 4], [2, 1, 0]]
 	>>> three_by_2 = [[2, 1], [4, 2], [3, 1]]
 	>>> not_rect = [[2, 1], [3, 2, 3]]	
 	>>> m_a = [[1, 2], [1, 2]]
 	>>> m_b = [[1, 1], [1, 1]]
 
-	>>> print(matrix_mul(not_rect, m_b))
+	>>> print(lazy_matrix_mul(not_rect, m_b))
 	Traceback (most recent call last):
 	    ...
 	TypeError: each row of m_a must be of the same size
 
-	>>> print(matrix_mul(m_a, not_rect))
+	>>> print(lazy_matrix_mul(m_a, not_rect))
 	Traceback (most recent call last):
 	    ...
 	TypeError: each row of m_b must be of the same size
 
-	>>> print(matrix_mul(m_a, three_d))
+	>>> print(lazy_matrix_mul(m_a, three_d))
 	Traceback (most recent call last):
 	    ...
 	ValueError: m_a and m_b can't be multiplied
 
-	>>> print(matrix_mul(three_d, m_b))
+	>>> print(lazy_matrix_mul(three_d, m_b))
 	Traceback (most recent call last):
 	    ...
 	ValueError: m_a and m_b can't be multiplied
 
 Right inputs:
-	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 	>>> # integer inputs
 	>>> m_a = [[1, 2], [1, 2]]
 	>>> m_b = [[1, 2], [1, 2]]
@@ -203,35 +203,49 @@ Right inputs:
 	>>> three_by_two = [[1, 2], [2, 2], [4, 5]]
 	>>> all_neg = [[-1, -1], [-2, -2]]
 
-	>>> print(matrix_mul(m_a, m_b))
-	[[3, 6], [3, 6]]
-	>>> print(matrix_mul(m_a, m_a))
-	[[3, 6], [3, 6]]
-	>>> print(matrix_mul(m_a, m_neg))
-	[[1, -4], [1, -4]]
-	>>> print(matrix_mul(m_a, m_zero))
-	[[2, 3], [2, 3]]
-	>>> print(matrix_mul(m_a, m_all_zero))
-	[[0, 0], [0, 0]]
-	>>> print(matrix_mul(m_half_zero, m_b))
-	[[0, 0], [3, 6]]
-	>>> print(matrix_mul(three_d, three_by_two))
-	[[24, 30], [9, 10], [31, 42]]
+	>>> print(lazy_matrix_mul(m_a, m_b))
+	[[3 6]
+	 [3 6]]
+	>>> print(lazy_matrix_mul(m_a, m_a))
+	[[3 6]
+	 [3 6]]
+	>>> print(lazy_matrix_mul(m_a, m_neg))
+	[[ 1 -4]
+	 [ 1 -4]]
+	>>> print(lazy_matrix_mul(m_a, m_zero))
+	[[2 3]
+	 [2 3]]
+	>>> print(lazy_matrix_mul(m_a, m_all_zero))
+	[[0 0]
+	 [0 0]]
+	>>> print(lazy_matrix_mul(m_half_zero, m_b))
+	[[0 0]
+	 [3 6]]
+	>>> print(lazy_matrix_mul(three_d, three_by_two))
+	[[24 30]
+	 [ 9 10]
+	 [31 42]]
 
 	>>> # float inputs
 	>>> m_a = [[1, 2], [1, 2]]
 	>>> m_a = [[1.0, 2], [1, 2.0]]
 	>>> m_b = [[1, 2.4], [1, 2.5]]
 	>>> m_neg = [[-1, 2.5], [1, -3.0]]
-	>>> print(matrix_mul(m_a, m_b))
-	[[3.0, 7.4], [3.0, 7.4]]
-	>>> print(matrix_mul(m_a, m_a))
-	[[3.0, 6.0], [3.0, 6.0]]
-	>>> print(matrix_mul(m_a, m_neg))
-	[[1.0, -3.5], [1.0, -3.5]]
-	>>> print(matrix_mul(m_a, m_zero))
-	[[2.0, 3.0], [2.0, 3.0]]
-	>>> print(matrix_mul(m_a, m_all_zero))
-	[[0.0, 0.0], [0.0, 0.0]]
-	>>> print(matrix_mul(m_half_zero, m_b))
-	[[0, 0.0], [3, 7.4]]
+	>>> print(lazy_matrix_mul(m_a, m_b))
+	[[3.  7.4]
+	 [3.  7.4]]
+	>>> print(lazy_matrix_mul(m_a, m_a))
+	[[3. 6.]
+	 [3. 6.]]
+	>>> print(lazy_matrix_mul(m_a, m_neg))
+	[[ 1.  -3.5]
+	 [ 1.  -3.5]]
+	>>> print(lazy_matrix_mul(m_a, m_zero))
+	[[2. 3.]
+	 [2. 3.]]
+	>>> print(lazy_matrix_mul(m_a, m_all_zero))
+	[[0. 0.]
+	 [0. 0.]]
+	>>> print(lazy_matrix_mul(m_half_zero, m_b))
+	[[0.  0. ]
+	 [3.  7.4]]

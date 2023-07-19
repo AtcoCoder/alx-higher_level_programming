@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Functions:
-    matrix_mul
+    lazy_matrix_mul
 """
+import numpy as np
 
 
-def matrix_mul(m_a, m_b):
+def lazy_matrix_mul(m_a, m_b):
     """Multiplies 2 matrices
 
     Args:
@@ -48,10 +49,5 @@ def matrix_mul(m_a, m_b):
     if cols_a != rows_b:
         raise ValueError("m_a and m_b can't be multiplied")
 
-    new_m = [[0] * cols_b for _ in range(rows_a)]
-
-    for i in range(rows_a):
-        for j in range(cols_b):
-            for k in range(cols_a):
-                new_m[i][j] += m_a[i][k] * m_b[k][j]
+    new_m = np.matmul(m_a, m_b)
     return new_m
