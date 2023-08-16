@@ -9,15 +9,26 @@ module.exports = class Rectangle {
   }
 
   print () {
-    let shepUp = 0;
-    while (shepUp < this.height) {
+    let stepUp = 0;
+    while (stepUp < this.height) {
       let stepRight = 0;
       let step = '';
       for (stepRight = 0; stepRight < this.width; stepRight++) {
         step += 'X';
       }
       console.log(step);
-      shepUp++;
+      stepUp++;
     }
+  }
+
+  rotate () {
+    const temp = this.width;
+    this.width = this.height;
+    this.height = temp;
+  }
+
+  double () {
+    this.width = this.width * 2;
+    this.height = this.height * 2;
   }
 };
