@@ -7,7 +7,7 @@ function secondBiggest (array) {
     return;
   }
   const newArray = array.map((element) => element);
-  newArray.sort();
+  newArray.sort(function(a, b){return a-b});
   newArray.reverse();
   console.log(newArray[1]);
 }
@@ -17,6 +17,6 @@ const length = args.length;
 const array = [];
 let index;
 for (index = 2; index < length; index++) {
-  array.push(args[index]);
+  array.push(parseInt(args[index]));
 }
 secondBiggest(array);
