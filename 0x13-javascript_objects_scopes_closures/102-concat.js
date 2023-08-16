@@ -21,7 +21,6 @@ fs.readFile(fileA, (err, inputA) => {
     }
     fromB = inputB.toString();
     toC = fromA + fromB;
-    console.log(toC);
     fs.writeFile(fileC, toC, (err) => {
       if (err) throw err;
       fromB = inputB.toString();
