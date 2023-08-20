@@ -8,15 +8,12 @@ if __name__ == '__main__':
     password = sys.argv[2]
     database = sys.argv[3]
     state_name = sys.argv[4]
+    query = "SELECT * FROM states WHERE states.name='{}' ORDER BY states.id"
 
     db = MySQLdb.connect(user=username, password=password, database=database)
     cur = db.cursor()
-    cur.execute(
-            """SELECT * FROM states ORDER BY states.id;
-            """)
-
+    cur.execute(query.format(state_name))
     rows = cur.fetchall()
 
     for row in rows:
-        if row[1] == state_name:
-            print(row)
+        print(row)
