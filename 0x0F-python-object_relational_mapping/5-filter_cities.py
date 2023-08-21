@@ -25,10 +25,10 @@ if __name__ == '__main__':
     length = len(rows)
 
     for index, row in enumerate(rows):
+        print(row[0], end='')
         if index != length - 1:
-            print(row[0], end=', ')
-        else:
-            print(row[0])
+            print(', ', end='')
 
+    print()
     cur.close()
     db.close()
