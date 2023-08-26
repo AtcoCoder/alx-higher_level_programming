@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Contains the State class definition"""
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import relationship
 from sqlalchemy import Integer, String, Column
 
 Base = declarative_base()
