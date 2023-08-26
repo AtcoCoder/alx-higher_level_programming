@@ -2,7 +2,6 @@
 """Contains the City class definition"""
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Integer, String, Column, ForeignKey
-from relationship_state import State
 
 Base = declarative_base()
 
