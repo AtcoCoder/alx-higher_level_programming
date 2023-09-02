@@ -6,15 +6,16 @@ list 10 commits (from the most recent) of the repository 'rails' by the user
 import requests
 import sys
 
-repo = sys.argv[1]
-user = sys.argv[2]
-url = "https://api.github.com/repos/{}/{}/commits"
+if __name__ == '__main__':
+    repo = sys.argv[1]
+    user = sys.argv[2]
+    url = "https://api.github.com/repos/{}/{}/commits"
 
-response = requests.get(url.format(repo, user))
-content = response.json()
+    response = requests.get(url.format(repo, user))
+    content = response.json()
 
-for i in range(10):
-    commit = content[i]
-    sha = commit['sha']
-    author = commit['commit']['author']['name']
-    print("{}: {}".format(sha, author))
+    for i in range(10):
+        commit = content[i]
+        sha = commit['sha']
+        author = commit['commit']['author']['name']
+        print("{}: {}".format(sha, author))
