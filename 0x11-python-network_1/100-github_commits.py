@@ -13,10 +13,13 @@ if __name__ == '__main__':
     params = {'per_page': 10}
     url = "https://api.github.com/repos/{}/{}/commits"
 
-    response = requests.get(url.format(repo, user), params=params)
-    commits = response.json()
+    try:
+        response = requests.get(url.format(repo, user), params=params)
+        commits = response.json()
 
-    for commit in commits:
-        sha = commit.get('sha')
-        author = commit.get('commit').get('author').get('name')
-        print("{}: {}".format(sha, author))
+        for commit in commits:
+            sha = commit.get('sha')
+            author = commit.get('commit').get('author').get('name')
+            print("{}: {}".format(sha, author))
+    except Exception:
+        pass
