@@ -1,22 +1,26 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = process.argv[2];
-const characterId = '18';
-let count = 0;
+const args = process.argv;
+const url = args[2];
+const wedgeAntilles = "https://swapi-api.alx-tools.com/api/people/18/";
 
-request.get(url, (error, response, body) => {
+request(url, function (error, response, body) {
+  let count = 0;
   if (error) {
-    console.log(error);
-  } else {
-    const data = JSON.parse(body);
-    data.results.forEach((film) => {
-      film.characters.forEach((character) => {
-        if (character.includes(characterId)) {
-          count += 1;
-        }
-      });
-    });
-    console.log(count);
+    return console.error(error);
   }
+  const data = JSON.parse(body);
+  const films = data.results;
+
+  for (const film of films) {
+    const characters = film.characters;
+    for (const character of  characters) {
+      if (character == wedgeAntilles) {
+        count += 1;
+      }
+    }
+  }
+  console.log(count);
 });
+
