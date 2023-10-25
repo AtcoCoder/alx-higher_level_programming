@@ -3,7 +3,7 @@
 const request = require('request');
 const args = process.argv;
 const url = args[2];
-const wedgeAntilles = "https://swapi-api.alx-tools.com/api/people/18/";
+const wedgeAntilles = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request(url, function (error, response, body) {
   let count = 0;
@@ -15,12 +15,9 @@ request(url, function (error, response, body) {
 
   for (const film of films) {
     const characters = film.characters;
-    for (const character of  characters) {
-      if (character == wedgeAntilles) {
-        count += 1;
-      }
+    if (characters.includes(wedgeAntilles)) {
+      count += 1;
     }
   }
   console.log(count);
 });
-
